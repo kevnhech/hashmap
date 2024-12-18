@@ -1,5 +1,5 @@
 # hashmap
-Start by creating a HashMap class or factory function. It’s up to you which you want to use. It should have at least two variables for load factor and capacity. Then proceed to create the following methods:
+Start by creating a HashMap class or factory function. It’s up to you which you want to use. It should have at least two variables for load factor and capacity. Then proceed to create the following methods: (Done)
 1. hash(key) takes a key and produces a hash code with it. We already implemented a fairly good hash function in the previous lesson.
 2. set(key, value) takes two arguments: the first is a key, and the second is a value that is assigned to this key.
 3. get(key) takes one argument as a key and returns the value that is assigned to this key. If a key is not found, return null.

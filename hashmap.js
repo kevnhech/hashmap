@@ -1,7 +1,8 @@
 class HashMap {
   constructor() {
-    this.loadFactor = 0;
-    this.capacity = 0;
+    this.bucket = new Array(16);
+    this.loadFactor = 0.75;
+    this.capacity = this.bucket.length;
   }
 
   hash(key) {
@@ -9,7 +10,7 @@ class HashMap {
 
     const primeNumber = 31;
     for (let i = 0; i < key.length; i++) {
-      hashCode = primeNumber * hashCode + key.charCodeAt(i);
+      hashCode = (primeNumber * hashCode + key.charCodeAt(i)) % this.capacity;
     }
 
     return hashCode;

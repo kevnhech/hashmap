@@ -33,4 +33,13 @@ class HashMap {
       bucket[index].append(key, value);
     }
   }
+
+  get(key) {
+    let bucket = this.bucket;
+    let value = null;
+    bucket.forEach((list) => {
+      if (list.containsKey(key)) value = list.at(list.findKey(key)).value;
+    });
+    return value;
+  }
 }

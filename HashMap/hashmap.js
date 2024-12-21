@@ -51,4 +51,16 @@ class HashMap {
     });
     return bool
   }
+
+  remove(key) {
+    let bucket = this.bucket;
+    let bool = false;
+    bucket.forEach((list) => {
+      if (list.containsKey(key)) {
+        list.removeAt(list.findKey(key));
+        bool = true;
+      }
+    });
+    return bool;
+  }
 }

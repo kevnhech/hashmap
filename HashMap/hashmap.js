@@ -73,4 +73,8 @@ class HashMap {
     });
     return count;
   }
+
+  clear() {
+    this.bucket = new Array(16);
+  }
 }

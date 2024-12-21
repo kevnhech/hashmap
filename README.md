@@ -6,7 +6,7 @@ Start by creating a HashMap class or factory function. It’s up to you which yo
 4. has(key) takes a key as an argument and returns true or false based on whether or not the key is in the hash map. (Done)
 5. remove(key) takes a key as an argument. If the given key is in the hash map, it should remove the entry with that key and return true. If the key isn’t in the hash map, it should return false. (Done)
 6. length() returns the number of stored keys in the hash map. (Done)
-7. clear() removes all entries in the hash map.
+7. clear() removes all entries in the hash map. (Done)
 8. keys() returns an array containing all the keys inside the hash map.
 9. values() returns an array containing all the values.
 10. entries() returns an array that contains each key, value pair. Example: [[firstKey, firstValue], [secondKey, secondValue]]

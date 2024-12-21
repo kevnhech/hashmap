@@ -42,4 +42,13 @@ class HashMap {
     });
     return value;
   }
+
+  has(key) {
+    let bucket = this.bucket;
+    let bool = false;
+    bucket.forEach((list) => {
+      if (list.containsKey(key)) bool = true;
+    });
+    return bool
+  }
 }

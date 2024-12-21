@@ -63,4 +63,14 @@ class HashMap {
     });
     return bool;
   }
+
+  length() {
+    let bucket = this.bucket;
+    let bool = false;
+    let count = 0;
+    bucket.forEach((list) => {
+      count += list.size();
+    });
+    return count;
+  }
 }

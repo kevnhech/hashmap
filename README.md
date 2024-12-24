@@ -9,4 +9,4 @@ Start by creating a HashMap class or factory function. It’s up to you which yo
 7. clear() removes all entries in the hash map. (Done)
 8. keys() returns an array containing all the keys inside the hash map. (Done)
 9. values() returns an array containing all the values. (Done)
-10. entries() returns an array that contains each key, value pair. Example: [[firstKey, firstValue], [secondKey, secondValue]]
+10. entries() returns an array that contains each key, value pair. Example: [[firstKey, firstValue], [secondKey, secondValue]] (Done)

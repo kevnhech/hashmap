@@ -95,4 +95,13 @@ class HashMap {
     });
     return arr;
   }
+
+  entries() {
+    let bucket = this.bucket;
+    let arr = [];
+    bucket.forEach((list) => {
+      arr.push(list.returnPair());
+    });
+    return arr;
+  }
 }

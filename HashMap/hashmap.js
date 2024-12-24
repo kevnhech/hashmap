@@ -77,4 +77,13 @@ class HashMap {
   clear() {
     this.bucket = new Array(16);
   }
+
+  keys() {
+    let bucket = this.bucket;
+    let arr = [];
+    bucket.forEach((list) => {
+      arr = arr.concat(list.returnKey());
+    });
+    return arr;
+  }
 }

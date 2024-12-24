@@ -99,6 +99,18 @@ class LinkedList {
     return idx;
   }
 
+  returnKey() {
+    let currentNode = this.headNode;
+    let arr = [];
+    for (let i = 0; i < this.count; i++) {
+      if (currentNode.key) {
+        arr.push(currentNode.key);
+        currentNode = currentNode.nextNode;
+      }
+    }
+    return arr;
+  }
+
   toString() {
     let currentNode = this.headNode;
     let str = "";

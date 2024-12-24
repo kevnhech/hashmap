@@ -82,8 +82,24 @@ class HashMap {
     let bucket = this.bucket;
     let arr = [];
     bucket.forEach((list) => {
-      arr = arr.concat(list.returnKey());
+      arr = arr.concat(list.returnKeys());
+    });
+    return arr;
+  }
+
+  values() {
+    let bucket = this.bucket;
+    let arr = [];
+    bucket.forEach((list) => {
+      arr = arr.concat(list.returnValues());
     });
     return arr;
   }
 }
+
+const test = new HashMap() // or HashMap() if using a factory
+test.set('apple', 'red')
+test.set('banana', 'yellow')
+test.set('carrot', 'orange')
+
+console.log(test.values());

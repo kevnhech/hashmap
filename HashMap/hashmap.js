@@ -96,10 +96,3 @@ class HashMap {
     return arr;
   }
 }
-
-const test = new HashMap() // or HashMap() if using a factory
-test.set('apple', 'red')
-test.set('banana', 'yellow')
-test.set('carrot', 'orange')
-
-console.log(test.values());

@@ -99,7 +99,7 @@ class LinkedList {
     return idx;
   }
 
-  returnKey() {
+  returnKeys() {
     let currentNode = this.headNode;
     let arr = [];
     for (let i = 0; i < this.count; i++) {

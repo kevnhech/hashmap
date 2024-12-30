@@ -72,9 +72,13 @@ class HashMap {
   remove(key) {
     let bucket = this.bucket;
     let bool = false;
+    let index = this.hash(key);
     bucket.forEach((list) => {
-      if (list.containsKey(key)) {
+      if (list.containsKey(key) && list.count > 1) {
         list.removeAt(list.findKey(key));
+        bool = true;
+      } else if (list.containsKey(key) && list.count == 1) {
+        delete bucket[index];
         bool = true;
       }
     });

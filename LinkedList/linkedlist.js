@@ -123,6 +123,16 @@ class LinkedList {
     return arr;
   }
 
+  returnNodes() {
+    let currentNode = this.headNode;
+    let arr = [];
+    for (let i = 0; i < this.count; i++) {
+      arr.push(currentNode);
+      if (currentNode.nextNode != null) currentNode = currentNode.nextNode;
+    }
+    return arr;
+  }
+
   returnPair() {
     let currentNode = this.headNode;
     let arr = [];

@@ -10,12 +10,10 @@ class HashMap {
   hash(key) {
     let hashCode = 0;
     let capacity = this.capacity;
-
     const primeNumber = 31;
     for (let i = 0; i < key.length; i++) {
       hashCode = (primeNumber * hashCode + key.charCodeAt(i)) % capacity;
     }
-
     return hashCode;
   }
 
@@ -23,15 +21,34 @@ class HashMap {
     let list = new LinkedList();
     let index = this.hash(key);
     let bucket = this.bucket;
-
-    if (bucket[index] == undefined) {
-      list.append(key, value);
-      bucket[index] = list;
-    } else if (bucket[index].containsKey(key)) {
-      bucket[index].at(bucket[index].findKey(key)).value = value;
+    if (index < 0 || index >= bucket.length) {
+      throw new Error("Trying to access index out of bounds");
     } else {
-      bucket[index].append(key, value);
+      if (bucket[index] == undefined) {
+        list.append(key, value);
+        bucket[index] = list;
+      } else if (bucket[index].containsKey(key)) {
+        bucket[index].at(bucket[index].findKey(key)).value = value;
+      } else {
+        bucket[index].append(key, value);
+      }
     }
+    if (this.length() > Math.round(this.capacity * this.loadFactor)) {
+      this.grow();
+    }
+  }
+
+  grow() {
+    let oldBucket = this.bucket;
+    this.bucket = new Array(this.capacity * 2);
+    this.capacity = this.bucket.length;
+    let arr = [];
+    oldBucket.forEach((list) => {
+      arr = arr.concat(list.returnNodes());
+    });
+    arr.forEach((node) => {
+      this.set(node.key, node.value);
+    });
   }
 
   get(key) {
@@ -76,6 +93,7 @@ class HashMap {
 
   clear() {
     this.bucket = new Array(16);
+    this.capacity = this.bucket.length;
   }
 
   keys() {
